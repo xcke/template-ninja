@@ -24,4 +24,21 @@ git clone https://github.com/xcke/template-ninja.git
 cd template-ninja
 pip install -r requirements.txt
 ```
-You can start the script for example: `python main.py my_template.xml database.csv`
+Usage of the script: 
+
+```
+python main.py --help
+usage: main.py [-h] [-D] [-n NAME] [-v] [--version] template input
+
+positional arguments:
+  template              Name of the template from the Templates dir
+  input                 Input CSV file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -D, --debug
+  -n NAME, --name NAME
+  -v, --verbose         Verbosity (-v, -vv, etc)
+  --version             show program's version number and exit
+(xml-templating) area-x51:xml-templating xcke$ 
+```
