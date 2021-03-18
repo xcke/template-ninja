@@ -10,10 +10,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 #### Install required applications using chocholatey
 
-˙˙˙
+```
 choco install miniconda3
 choco install git
-˙˙˙
+```
 
 #### Checkout the latest code to desired folder and install deps:
 
