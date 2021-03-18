@@ -1,4 +1,4 @@
-1. Installation
+# Installation
 
 Open a Windows PowerShell with admin privilage and install chocholatey (A windows package manager):
 
@@ -6,7 +6,7 @@ Open a Windows PowerShell with admin privilage and install chocholatey (A window
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
-2. Install some programs:
+# Installation instructions for Windows:
 
 ˙˙˙
 choco install miniconda3
@@ -17,3 +17,5 @@ Activate the python env
 `conda activate`
 `git clone https://github.com/xcke/xml-template.git`
 `pip install -r requirements.txt`
+
+You can start the script for example: `python main.py my_template.xml database.csv`
