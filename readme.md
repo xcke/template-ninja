@@ -1,4 +1,4 @@
-# Installation
+### Installation
 
 Open a Windows PowerShell with admin privilage and install chocholatey (A windows package manager):
 
@@ -6,14 +6,18 @@ Open a Windows PowerShell with admin privilage and install chocholatey (A window
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
-# Installation instructions for Windows:
+### Installation instructions for Windows:
+
+#### Install required applications using chocholatey
 
 ˙˙˙
 choco install miniconda3
 choco install git
-˙˙˙ 3. Checkout the latest code to desired folder and install deps:
+˙˙˙
 
-Activate the python env
+#### Checkout the latest code to desired folder and install deps:
+
+Activate the python env  
 `conda activate`
 `git clone https://github.com/xcke/xml-template.git`
 `pip install -r requirements.txt`
