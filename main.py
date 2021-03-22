@@ -39,7 +39,7 @@ def main(arg):
     template = load_template(templates_dir, template_filename)
     data = load_csv(input_filename)
     filename = Path(template_filename).stem + '.xml'
-    with open(Path(output_dir) / filename, 'w') as f:
+    with open(Path(output_dir) / filename, 'w', encoding='utf-8') as f:
         f.write(template.render(records=data))
     logger.info(f"{filename} was created in the Output folder.")
 
