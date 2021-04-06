@@ -29,6 +29,8 @@ def main(arg):
         logger.info("Verbose output.")
     else:
         logzero.loglevel(logging.INFO)
+    if args.use_csv:
+        use_csv = True
     logger.info("hello world!:-)")
     logger.info(args)
     logger.debug("Debug message!")
@@ -36,7 +38,10 @@ def main(arg):
     template_filename = args.template
     input_filename = args.input
     template = load_template(templates_dir, template_filename)
-    data = load_excel(input_filename)
+    if use_csv:
+        data = load_csv(input_filename)
+    else:
+        data = load_excel(input_filename)
     filename = Path(template_filename).stem + '.xml'
     with open(Path(output_dir) / filename, 'w', encoding='utf-8') as f:
         f.write(template.render(records=data))
@@ -55,8 +60,8 @@ if __name__ == "__main__":
     # Optional argument flag which defaults to False
     parser.add_argument("-D", "--debug", action="store_true", default=False)
 
-    # Optional argument which requires a parameter (eg. -d test)
-    parser.add_argument("-n", "--name", action="store", dest="name")
+    # Optional argument to use CSV
+    parser.add_argument("-C", "--csv", action="store_true", dest="use_csv")
 
     # Optional verbosity counter (eg. -v, -vv, -vvv, etc.)
     parser.add_argument(

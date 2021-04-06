@@ -14,11 +14,10 @@ def load_csv(configfile):
     """Loads the element from the CSV file and returns as dict """
     results = []
     try:
-        configdict = csv.DictReader(open(configfile, encoding='utf-8'), delimiter=';')
-        for row in configdict:
-            print(row)
-            results.append(row)
-        return results
+        df = pd.read_csv(configfile, sep=';', encoding='utf-8')
+        df['index'] = range(1, len(df) + 1)
+        my_dic = df.to_dict(orient='records')
+        return my_dic
     except Exception as e:
         logger.info("There was an issue with loading {}".format(configfile))
         logger.debug(f"Exception was: {e}")
