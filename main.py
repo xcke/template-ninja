@@ -35,9 +35,8 @@ def main(arg):
     """ Main program """
     template_filename = args.template
     input_filename = args.input
-
     template = load_template(templates_dir, template_filename)
-    data = load_csv(input_filename)
+    data = load_excel(input_filename)
     filename = Path(template_filename).stem + '.xml'
     with open(Path(output_dir) / filename, 'w', encoding='utf-8') as f:
         f.write(template.render(records=data))
@@ -51,7 +50,7 @@ if __name__ == "__main__":
     # Required positional argument
     parser.add_argument("template", help="Name of the template from the Templates dir", default='21T1042E.j2')
 
-    parser.add_argument("input", help="Input CSV file", default='adatbazis.csv')
+    parser.add_argument("input", help="Input Excel file", default='adatbazis.xlsx')
 
     # Optional argument flag which defaults to False
     parser.add_argument("-D", "--debug", action="store_true", default=False)
