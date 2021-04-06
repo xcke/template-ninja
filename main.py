@@ -55,7 +55,7 @@ if __name__ == "__main__":
     # Required positional argument
     parser.add_argument("template", help="Name of the template from the Templates dir", default='21T1042E.j2')
 
-    parser.add_argument("input", help="Input Excel file", default='adatbazis.xlsx')
+    parser.add_argument("input", help="Input filename (default is Excel)", default='adatbazis.xlsx')
 
     # Optional argument flag which defaults to False
     parser.add_argument("-D", "--debug", action="store_true", default=False)
